@@ -16,9 +16,18 @@ import './App.css'
 function App() {
 
   return (
-    <>
-      hi there
-    </>
+    //we ll use alchemy to create our own RPC url
+    <ConnectionProvider endpoint={""}>
+        <WalletProvider wallets={[]} autoConnect>
+            <WalletModalProvider>
+                <WalletMultiButton />
+                  <WalletDisconnectButton />
+                  <div>
+                    hi there
+                  </div>
+                </WalletModalProvider>
+            </WalletProvider>
+        </ConnectionProvider>
   )
 }
 
